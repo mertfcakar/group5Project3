@@ -2,6 +2,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class AuthenticationManager {
 
@@ -38,4 +39,9 @@ public class AuthenticationManager {
         }
         return null; // Authentication failed
     }
+    public Connection connect() throws SQLException
+    {
+        return DriverManager.getConnection(URL, USER, PASSWORD);
+    }
+    
 }
